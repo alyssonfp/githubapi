@@ -1,0 +1,12 @@
+.main-nav {
+  padding-left: 40px;
+  min-height: 70px;
+  background-color:#1890FF;
+  
+}
+.nav-logo-text {
+  color: #FFFFFF;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 24px;
+}
