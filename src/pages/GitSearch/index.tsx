@@ -2,7 +2,7 @@ import "./styles.css";
 import ResultCard from "components/ResultCard";
 import { useState } from "react";
 import axios from "axios";
-import gitImage from './gitimage.png'
+
 
 type Data = {
   url: string;
@@ -44,8 +44,8 @@ const GitSearch = () => {
   };
 
   return (
-    <div className="cep-search-container">
-      <div className="container search-container">
+    <div className="git-search-container">
+      <div className="search-container">
         <form onSubmit={handleSubmit}>
           <div className="form-container">
             <h1>Encontre um perfil Github</h1>
@@ -64,22 +64,19 @@ const GitSearch = () => {
         </form>
       </div>
       {data && (
-      <div className="cep-search-container-inf">
-        <div className="return-container">
-          
-         
+        <div className="git-search-container-inf">
+          <div className="return-container">
             <>
-          <h4>Informações</h4>
-          <ResultCard title="Perfil:" description={data.url} />
-          <ResultCard title="Seguidores:" description={data.followers} />           
-          <ResultCard title="Localidade:" description={data.location} />
-          <ResultCard title="Nome:" description={data.name} />
-          </>
-         
+              <h4>Informações</h4>
+              <ResultCard title="Perfil:" description={data.url} />
+              <ResultCard title="Seguidores:" description={data.followers} />
+              <ResultCard title="Localidade:" description={data.location} />
+              <ResultCard title="Nome:" description={data.name} />
+            </>
+          </div>
+          <img src={data?.avatar_url} alt="" />
         </div>
-        <img src={data?.avatar_url} alt="" />
-      </div>
-       )}
+      )}
     </div>
   );
 };
